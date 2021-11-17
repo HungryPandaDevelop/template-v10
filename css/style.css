@@ -1,0 +1,37 @@
+@media screen and (max-width: 414px) {
+  /*---comments-all start---*/
+  .box2 {
+    background: red;
+  }
+
+  /*---comments-all end---*/
+}
+/*-----defaul-----*/
+/*-----defaul-----*/
+/*-----btns-----*/
+/*-----btns-----*/
+/*-----forms-----*/
+/*-----forms-----*/
+/*-----popup-form-----*/
+/*-----popup-form-----*/
+/*-----header-----*/
+header a {
+  text-decoration: none;
+}
+header a:hover {
+  text-decoration: underline;
+}
+header .main-grid {
+  height: 60px;
+  position: relative;
+}
+
+/*-----header-----*/
+/*-----footer-----*/
+/*-----footer-----*/
+/*-----mobile-menu-----*/
+/*-----mobile-menu-----*/
+/*-----slider-owl-----*/
+/*-----slider-owl-----*/
+/*-----map-----*/
+/*-----map-----*/
