@@ -1,0 +1,101 @@
+.hamburger
+  @include bgImageEl("../images/controls/menu.svg")
+  width: 30px
+  height: 30px
+  cursor: pointer
+  margin: auto
+
+.modal-menu
+  @include positionElement(100%, 100%, 100%, 0, left, top, 5, block, fixed)
+  background-color: $orangeColor
+  color: $whiteColor
+  text-align: center
+  transition: ease-out 0.25s
+  overflow: hidden
+
+  a
+    text-decoration: none
+    font-family: "semibold"
+
+  .logo
+    padding: 30px 0 15px
+
+    a
+      margin: 0 auto
+
+  ul,
+  li
+    display: block
+
+  ul
+    padding: 0
+    padding-top: 30px
+    padding-bottom: 30px
+
+  li
+    padding: 15px
+    font-size: $standartSize
+
+  a
+    font-family: "regular"
+    text-transform: uppercase
+
+  .feedback-container
+    text-align: center
+    margin: 0 0 30px
+
+    .feedback
+      width: 100%
+
+    .social-mobile-menu
+      display: inline-block
+      vertical-align: sub
+      border-left: 1px solid
+      margin-left: 10px
+
+    img
+      width: 20px
+      height: 20px
+      margin-left: 15px
+
+  .close
+    background-image: url("../images/controls/cancel-white.svg")
+    z-index: 2
+
+  .modal-menu-img
+    @include positionElement(120%, 30%, 50%, -20%, left, bottom)
+    @include bgImageEl("../images/lodka.svg", contain)
+    transition: linear 2s
+    opacity: 0
+    visibility: visible
+
+  .logo,
+  .menu,
+  .feedback-container
+    transition: ease-out 0.5s
+
+    opacity: 0
+    visibility: hidden
+    transform: translateY(-15px)
+
+  .menu
+    transition-delay: 0.25s
+
+  .feedback-container
+    transition-delay: 0.5s
+
+  &.show
+    left: 0
+
+    .modal-menu-img
+      bottom: 0
+      opacity: 1
+      visibility: visible
+      left: -33%
+
+    .logo,
+    .menu,
+    .feedback-container
+      opacity: 1
+      visibility: visible
+      transform: translateY(0px)

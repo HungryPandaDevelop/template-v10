@@ -1,0 +1,67 @@
+
+$gridCount: 12
+$indent: 30px
+$maxWidth: 1680px
+
+h1
+  @include changeFontSize($mediaLargeSize)
+
+.main-grid
+  display: grid
+  grid-template-columns: repeat($gridCount, 1fr)
+  grid-column-gap: 15px
+  padding: 0 $indent
+  max-width: $maxWidth
+  margin: 0 auto
+.main-full
+  padding: 0 $indent
+  max-width: $maxWidth
+  margin: 0 auto
+.item-col-quarter
+  grid-column: span 3
+.item-col-third
+  grid-column: span 4
+.item-col-half
+  grid-column: span 6
+
+.social
+  display: inline-block
+  vertical-align: middle
+
+  a
+    display: inline-block
+    margin: 0 0 0 15px
+
+    img
+      object-fit: cover
+      width: 30px
+      height: 30px
+
+section
+  padding: 120px 0 60px
+
+  h2
+    font-size: $largeSize
+    margin: 0 0 60px
+
+.item-default
+  text-decoration: none
+  margin: 0 0 60px
+  padding: 30px
+  border: 1px solid
+  a
+    text-decoration: none
+
+  h3
+    font-size: $mediumSize
+    margin: 0 0 15px
+    &:hover
+      color: $greenColor
+  .item-default--img
+    margin: 0 0 15px
+    img
+      width: 100%
+  .item-default--date
+    margin: 0 0 15px
+  .item-defatit--description
+    margin: 0 0 15px

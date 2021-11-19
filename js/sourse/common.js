@@ -1,1 +1,4 @@
-// @prepros-append search.js
+ // @prepros-append common-parts/initialization.js  
+ // @prepros-append common-parts/img-cover.js  
+ // @prepros-append common-parts/style-file.js  
+ // @prepros-append common-parts/style-select.js  

@@ -16,3 +16,55 @@ html
 		include default/header.pug
 		.stub
 		// header end
+
+
+		// poster start
+		include main-page/poster-section.pug
+		// poster end
+
+		// main page content start
+		section
+			.main-full
+				h2 Новая секция
+			.main-grid
+				-for (var i=0; i < 4; i++)
+					+itemDefault("quarter","New Item","../images/temp/1.jpg","","Lodio quae atqu send to me...","btn","Подробнее")
+				-for (var i=0; i < 3; i++)
+					+itemDefault("third","New Item","../images/temp/1.jpg","11.11.11","Lodio quae atqu send to me...","btn","Подробнее")
+				-for (var i=0; i < 2; i++)
+					+itemDefault("half","New Item","../images/temp/1.jpg","11.11.11","Lodio quae atqu send to me...","btn","Подробнее")
+		section
+			.main-full
+				h2 Обратная связь
+				- var standartField = [["text","Фио","form--col__three"],["phone","form--col__three"],["email","Email","form--col__three"],["textarea","Ваше сообщение","form--col__full"]];
+				- var personalDataField = [["checkbox","Я даю свое согласие на обработку персональных данных","form--col__full"]]
+				- var fileField = [["file",1,"Выберете файл","Загрузите фото лицензии/сертификата на продукцию (для фото - формат: .jpg, .png; размер - не более 500 кб)","image/jpeg,image/png,image/gif","form--col__full"]]; 
+			
+				- var selectField = [["select","Выберете пункт меню", ["lorem","ipusm","scientist", "blog", "red"],"form--col__full"]];
+				- var checkboxField = [["checkbox","one","form--col__three"],["checkbox","two","form--col__three"],["checkbox","three","form--col__three"]];
+				- var radioField = [["radio","new","one","form--col__three"],["radio","new","two","form--col__three"],["radio","new","three","form--col__three"]];
+				- var btnField = [["submit","btn btn-send"]];
+
+
+			+form(standartField)
+			br
+			+form(personalDataField)
+			br
+			+form(fileField)
+			br
+			+form(selectField)
+			br
+			+form(checkboxField)
+			br
+			+form(radioField)
+			br
+			+form(btnField)
+			
+
+		// main page content start
+
+		// footer start 
+		.stub-footer
+		include default/footer.pug
+		
+		// footer end
