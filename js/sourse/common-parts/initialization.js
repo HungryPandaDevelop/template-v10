@@ -6,4 +6,3 @@ owlPoster.owlCarousel({
   dots: true
 });
 
-console.log('test');
