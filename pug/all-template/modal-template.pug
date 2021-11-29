@@ -1,0 +1,11 @@
+mixin modal-template(num, topicModal, textModal)
+  .modal.element-show(data-showEl=num)
+    .modal__container 
+      .close
+      if topicModal
+        h2= topicModal
+      if textModal
+        .modal__greetings
+          = textModal
+      if block
+        block

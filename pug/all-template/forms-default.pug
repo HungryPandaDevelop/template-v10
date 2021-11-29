@@ -28,4 +28,4 @@ mixin form(allField)
           each val in allField[x][2]
             option= val
       if allField[x][0] =="submit"
-        input(type="submit" class=allField[x][1])
+        input(type="submit" class=allField[x][1] value=allField[x][2])

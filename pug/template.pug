@@ -4,12 +4,12 @@ html
 	include default/head.pug 
 	// head end
 	body
-		// modal-menu start
-		include modal/modal-menu.pug
-		// modal-menu end
+		// modal-menu start 1
+		include modal/menu__modal.pug
+		// modal-menu end 2
 
 		// modal-form start
-		include modal/modal-form.pug
+		include modal/backcall__modal.pug
 		// modal-form end
 
 		// header start
@@ -33,7 +33,7 @@ html
 					+itemDefault("third","New Item","../images/temp/1.jpg","11.11.11","Lodio quae atqu send to me...","btn","Подробнее")
 				-for (var i=0; i < 2; i++)
 					+itemDefault("half","New Item","../images/temp/1.jpg","11.11.11","Lodio quae atqu send to me...","btn","Подробнее")
-		section
+		section 
 			.main-full
 				h2 Обратная связь
 				- var standartField = [["text","Фио","form--col__three"],["phone","form--col__three"],["email","Email","form--col__three"],["textarea","Ваше сообщение","form--col__full"]];
@@ -43,7 +43,7 @@ html
 				- var selectField = [["select","Выберете пункт меню", ["lorem","ipusm","scientist", "blog", "red"],"form--col__full"]];
 				- var checkboxField = [["checkbox","one","form--col__three"],["checkbox","two","form--col__three"],["checkbox","three","form--col__three"]];
 				- var radioField = [["radio","new","one","form--col__three"],["radio","new","two","form--col__three"],["radio","new","three","form--col__three"]];
-				- var btnField = [["submit","btn btn-send"]];
+				- var btnField = [["submit","btn btn-send","Отправить"]];
 
 
 			+form(standartField)

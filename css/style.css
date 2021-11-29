@@ -132,6 +132,10 @@ strong {
 }
 
 /*-----defaul-end----*/
+/*-----modal-start----*/
+/*-----modal-end----*/
+/*-----modal-menu-start----*/
+/*-----modal-menu-end----*/
 /*-----default-content-start----*/
 @media screen and (max-width: 1920px) {
   h1 {
@@ -560,77 +564,6 @@ input.btn:hover,
 /*-checkbox-select-*/
 /*-----forms-end----*/
 /*-----modal-all-start----*/
-/*-modal-start*/
-.modal-container {
-  -webkit-transition: ease-out 0.5s;
-  transition: ease-out 0.5s;
-  opacity: 0;
-  visibility: hidden;
-  width: 100%;
-  position: block;
-  display: fixed;
-  height: 100%;
-  z-index: 4;
-  left: 0;
-  top: 0;
-}
-.modal-container.show {
-  opacity: 1;
-  visibility: visible;
-}
-.modal-container .modal-bg {
-  width: 100%;
-  position: absolute;
-  height: 100%;
-  left: 0;
-  top: 0;
-  background: #303030;
-  opacity: 0.5;
-}
-.modal-container .flex-container {
-  width: 100%;
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.modal {
-  max-width: 620px;
-  background: #ffffff;
-  margin: auto;
-  position: relative;
-  text-align: center;
-  padding: 30px 0 60px;
-}
-.modal h2 {
-  margin: 0 0 30px;
-}
-.modal form {
-  max-width: 75%;
-  margin: 0 auto;
-}
-.modal form input,
-.modal form textarea {
-  border-bottom: 1px solid #686868;
-  padding-left: 0;
-  padding-right: 0;
-  margin: 0 0 30px;
-}
-.modal form textarea {
-  height: 30px;
-}
-.modal form .btn {
-  margin: 30px 0 0;
-}
-.modal .checkbox span {
-  border-color: #5b89b1;
-}
-.modal .checkbox span:after {
-  background: #5b89b1;
-}
-
-/*-modal-end*/
 /*-----modal-all-end----*/
 /*-----header-start----*/
 .stub {
@@ -912,132 +845,6 @@ footer .create {
 
 /*-----footer-end----*/
 /*-----modal-menu-start----*/
-.hamburger {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-image: url("../images/controls/menu.svg");
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-  margin: auto;
-}
-
-.modal-menu {
-  width: 100%;
-  position: block;
-  display: fixed;
-  height: 100%;
-  z-index: 5;
-  left: 100%;
-  top: 0;
-  background-color: #E88328;
-  color: #ffffff;
-  text-align: center;
-  -webkit-transition: ease-out 0.25s;
-  transition: ease-out 0.25s;
-  overflow: hidden;
-}
-.modal-menu a {
-  text-decoration: none;
-  font-family: "semibold";
-}
-.modal-menu .logo {
-  padding: 30px 0 15px;
-}
-.modal-menu .logo a {
-  margin: 0 auto;
-}
-.modal-menu ul,
-.modal-menu li {
-  display: block;
-}
-.modal-menu ul {
-  padding: 0;
-  padding-top: 30px;
-  padding-bottom: 30px;
-}
-.modal-menu li {
-  padding: 15px;
-  font-size: 15px;
-}
-.modal-menu a {
-  font-family: "regular";
-  text-transform: uppercase;
-}
-.modal-menu .feedback-container {
-  text-align: center;
-  margin: 0 0 30px;
-}
-.modal-menu .feedback-container .feedback {
-  width: 100%;
-}
-.modal-menu .feedback-container .social-mobile-menu {
-  display: inline-block;
-  vertical-align: sub;
-  border-left: 1px solid;
-  margin-left: 10px;
-}
-.modal-menu .feedback-container img {
-  width: 20px;
-  height: 20px;
-  margin-left: 15px;
-}
-.modal-menu .close {
-  background-image: url("../images/controls/cancel-white.svg");
-  z-index: 2;
-}
-.modal-menu .modal-menu-img {
-  width: 120%;
-  position: absolute;
-  height: 30%;
-  left: 50%;
-  bottom: -20%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-image: url("../images/lodka.svg");
-  -webkit-transition: linear 2s;
-  transition: linear 2s;
-  opacity: 0;
-  visibility: visible;
-}
-.modal-menu .logo,
-.modal-menu .menu,
-.modal-menu .feedback-container {
-  -webkit-transition: ease-out 0.5s;
-  transition: ease-out 0.5s;
-  opacity: 0;
-  visibility: hidden;
-  -webkit-transform: translateY(-15px);
-          transform: translateY(-15px);
-}
-.modal-menu .menu {
-  -webkit-transition-delay: 0.25s;
-          transition-delay: 0.25s;
-}
-.modal-menu .feedback-container {
-  -webkit-transition-delay: 0.5s;
-          transition-delay: 0.5s;
-}
-.modal-menu.show {
-  left: 0;
-}
-.modal-menu.show .modal-menu-img {
-  bottom: 0;
-  opacity: 1;
-  visibility: visible;
-  left: -33%;
-}
-.modal-menu.show .logo,
-.modal-menu.show .menu,
-.modal-menu.show .feedback-container {
-  opacity: 1;
-  visibility: visible;
-  -webkit-transform: translateY(0px);
-          transform: translateY(0px);
-}
-
 /*-----modal-menu-emd----*/
 /*-----carousel-start-owl-----*/
 .slider-owl .item-content {
