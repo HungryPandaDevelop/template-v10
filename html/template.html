@@ -16,9 +16,11 @@
   <!-- head end-->
   <body>
     <!-- modal-menu start 1-->
-        <div class="modal element-show" data-showEl="0">
+        <div class="modal element-show modal--visible" data-showEl="0">
           <div class="modal__container"> 
-            <div class="close"></div>
+            <div class="close-btn"></div>
+            <div class="main-full">
+            </div>
             <nav class="menu__modal">
               <ul> 
                 <li> <a href="#">Каталог</a></li>
@@ -40,8 +42,10 @@
     <!-- modal-form start-->
         <div class="modal element-show" data-showEl="1">
           <div class="modal__container"> 
-            <div class="close"></div>
-            <h2>Заказать звонок</h2> 
+            <div class="close-btn"></div>
+            <div class="main-full">
+              <h2>Заказать звонок</h2>
+            </div> 
                 <form class="form main-grid">
                   <input class="form--col__full" type="text" placeholder="Фио">
                   <input class="phone-mask form--col__full" type="text" placeholder="+7 (___) ___ - __ - __">

@@ -132,7 +132,46 @@ strong {
 }
 
 /*-----defaul-end----*/
-/*-----modal-start----*/
+/*-----modal-start----*/ 
+.modal {
+  width: 100%;
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  z-index: 3;
+  left: 0;
+  top: 0;
+  background-color: #fff;
+  -webkit-transition: ease-out 0.25s;
+  transition: ease-out 0.25s;
+  opacity: 0;
+  visibility: hidden;
+}
+.modal .close-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 15px;
+}
+
+.modal__container {
+  position: relative;
+  max-width: 600px;
+  margin: auto;
+  padding: 30px;
+  border: 1px solid #303030;
+}
+.modal__container h2, .modal__container h3 {
+  margin: 0 0 15px;
+}
+
+.modal--visible {
+  opacity: 1;
+  visibility: visible;
+}
+
 /*-----modal-end----*/
 /*-----modal-menu-start----*/
 /*-----modal-menu-end----*/
@@ -321,6 +360,18 @@ input.btn:hover,
 }
 
 /*pagination page end*/
+.close-btn {
+  display: inline-block;
+  vertical-align: middle;
+  width: 30px;
+  height: 30px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("../images/controls/close-black.svg");
+  cursor: pointer;
+}
+
 /*-----btns-end----*/
 /*-----forms-start----*/
 .form input:not(.btn),
@@ -563,8 +614,6 @@ input.btn:hover,
 
 /*-checkbox-select-*/
 /*-----forms-end----*/
-/*-----modal-all-start----*/
-/*-----modal-all-end----*/
 /*-----header-start----*/
 .stub {
   height: 120px;
@@ -844,8 +893,6 @@ footer .create {
 }
 
 /*-----footer-end----*/
-/*-----modal-menu-start----*/
-/*-----modal-menu-emd----*/
 /*-----carousel-start-owl-----*/
 .slider-owl .item-content {
   position: relative;
