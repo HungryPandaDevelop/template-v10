@@ -131,6 +131,10 @@ strong {
   font-family: "bold";
 }
 
+h1 {
+  font-size: 23px;
+}
+
 /*-----defaul-end----*/
 /*-----modal-start----*/ 
 .modal {
@@ -562,7 +566,7 @@ input.btn:hover,
 }
 
 /*-custom-select-*/
-/*-checkbox-select-*/
+/*-checkbox-start-*/
 .checkbox,
 .radio {
   display: inline-block;
@@ -612,7 +616,8 @@ input.btn:hover,
   border-radius: 100%;
 }
 
-/*-checkbox-select-*/
+/*-checkbox-wp-*/
+/*-checkbox-end-*/
 /*-----forms-end----*/
 /*-----header-start----*/
 .stub {
@@ -651,25 +656,26 @@ header hr {
   left: 0;
   bottom: 0;
 }
-
-nav {
+header nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
+header nav ul {
+  width: 100%;
+  margin: auto 0;
+}
+header nav li {
+  display: inline-block;
+}
+
 nav ul,
 nav li {
   padding: 0;
   margin: 0;
   list-style: none;
 }
-nav ul {
-  width: 100%;
-  margin: auto 0;
-}
-nav li {
-  display: inline-block;
-}
+nav ul a,
 nav li a {
   text-decoration: none;
   font-family: inherit;

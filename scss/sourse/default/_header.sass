@@ -23,21 +23,22 @@ header
 		margin: 0
 		@include positionElement(100%, 1px, 0, 0, left, bottom)
 
+	nav
+		display: flex
+
+		ul
+			width: 100%
+			margin: auto 0
+
+		li
+			display: inline-block
 nav
-	display: flex
 
 	ul,
 	li
 		padding: 0
 		margin: 0
 		list-style: none
-
-	ul
-		width: 100%
-		margin: auto 0
-
-	li
-		display: inline-block
 
 		a
 			text-decoration: none
