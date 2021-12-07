@@ -1166,26 +1166,26 @@ footer .create {
 /*-----map-----*/
 /*-----map-----*/
 /*-----main-page-start----*/
-/*-----poster-section-1-start--*/
-.poster-section {
+/*-----home-start--*/
+.main_home {
   color: #ffffff;
   height: calc(100vh - 120px);
 }
-.poster-section .img-cover {
+.main_home .img-cover {
   position: absolute;
 }
-.poster-section .poster-item,
-.poster-section .owl-poster {
+.main_home .main-item,
+.main_home .main-owl {
   height: 100%;
 }
-.poster-section .item-content {
+.main_home .main-content {
   position: relative;
 }
-.poster-section h2 {
+.main_home .main-content h2 {
   color: inherit;
 }
 
-/*-----poster-section-1-end--*/
+/*-----home-end--*/
 /*-----contacts-start--*/
 .contacts-info {
   margin-bottom: 30px;
@@ -1211,4 +1211,4 @@ footer .create {
 }
 
 /*-----contacts-end--*/
-/*-----main-page-end----*/
+/*-----home-end----*/
