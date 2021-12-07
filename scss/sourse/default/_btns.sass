@@ -2,23 +2,31 @@ input.btn,
 .btn
   text-decoration: none
   border: 1px solid
-  border-color: $blackColor
   padding: 10px 30px
-  background-color: $blackColor
   font: inherit
   display: inline-block
-  color: $whiteColor
   border-radius: 30px
   cursor: pointer
   text-align: center
   max-width: 190px
   width: 100%
+  background: none
 
+  span
+    margin-right: 8px
+.btn--black
+  background-color: $blackColor
+  border-color: $blackColor
+  color: $whiteColor
   &:hover
     background: $greenColor
     color: $whiteColor
     border-color: $greenColor
 
+.btn--green
+  background-color: $greenColor
+  &:hover
+    background-color: $blackColor
 /*pagination page start*/
 
 .pagination
@@ -71,3 +79,6 @@ input.btn,
 .close-btn
   @include icoEl(30px, 30px, "../images/controls/close-black.svg")
   cursor: pointer
+
+.hamburger-btn
+  @include icoEl(30px, 30px, "../images/controls/hamburger-white.svg")

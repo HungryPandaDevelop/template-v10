@@ -1,8 +1,8 @@
 mixin modal-template(num, topicModal, textModal, visibility)
   if(visibility)
-    .modal.element-show.modal--visible(data-showEl=num)
+    .modal.element-show.show(data-element=num)
       .modal__container 
-        .close-btn
+        .close-btn.close-js
         .main-full
           if topicModal
             h2= topicModal
@@ -12,9 +12,9 @@ mixin modal-template(num, topicModal, textModal, visibility)
         if block
           block
   else
-    .modal.element-show(data-showEl=num)
+    .modal.element-show(data-element=num)
       .modal__container 
-        .close-btn
+        .close-btn.close-js
         .main-full
           if topicModal
             h2= topicModal

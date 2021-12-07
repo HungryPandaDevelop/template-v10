@@ -1,0 +1,37 @@
+mixin cardItemDefault(col, name, img, price, priceSecond, text, btnClass, btnText)
+	.card-item--default(class="item-col-"+col)
+		.card-item__img(href="#")
+			img(src= img, alt="")
+		h3
+			a(href="#")= name
+		.card-item__description
+			= text
+		.card-item__reating
+			.card-item__grade 
+				i.star-ico
+				span 4.7
+			.card-item__rew
+				i.review-ico
+				span 30
+			.card-item__code
+				b Код товара: 
+				span 21349532
+		if price
+			.card-item__sale
+				.card-item__price
+					if price
+						.card-item__price--current= price 
+							span ₽
+					if priceSecond
+						.card-item__price--second= priceSecond 
+							span  ₽
+				.btn-container
+					a(href="#" class= btnClass)
+						span= btnText
+						i.basket-ico
+		.card-item__stock
+			|В наличии 
+			a(href="#") 
+				span в 63 магазинах
+
+

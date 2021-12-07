@@ -23,17 +23,20 @@ html
 		// poster end
 
 		// main page content start
+		- var textStumb = "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi cum tenetur odio repudiandae ipsam libero dolor exercitationem laudantium quam saepe, dicta consequuntur vitae ex architecto illum officia dignissimos molestias ea!"
 		section
 			.main-full
 				h2 Новая секция
 			.main-grid
 				-for (var i=0; i < 4; i++)
-					+itemDefault("quarter","New Item","../images/temp/1.jpg","","Lodio quae atqu send to me...","btn","Подробнее")
+					+cardItemDefault("quarter","Brit Care - Hight Chicken","../images/temp/product-1.jpg","1000","2000",textStumb,"btn btn--black","Купить")
+				-for (var i=0; i < 4; i++)
+					+itemDefault("news", "quarter","New Item","../images/temp/1.jpg","11.11.11","Lodio quae atqu send to me Lodio quae atqu send to me Lodio quae atqu send to me Lodio quae atqu send to me Lodio quae atqu send to me...","btn btn--black","Подробнее")
 				-for (var i=0; i < 3; i++)
-					+itemDefault("third","New Item","../images/temp/1.jpg","11.11.11","Lodio quae atqu send to me...","btn","Подробнее")
+					+itemDefault("news","third","New Item","../images/temp/1.jpg","11.11.11","Lodio quae atqu send to me ...","btn btn--black","Подробнее")
 				-for (var i=0; i < 2; i++)
-					+itemDefault("half","New Item","../images/temp/1.jpg","11.11.11","Lodio quae atqu send to me...","btn","Подробнее")
-		section 
+					+itemDefault("news","half","New Item","../images/temp/1.jpg","11.11.11","Lodio quae atqu send to me...","btn btn--black","Подробнее")
+		section  
 			.main-full
 				h2 Обратная связь
 				- var standartField = [["text","Фио","form--col__three"],["phone","form--col__three"],["email","Email","form--col__three"],["textarea","Ваше сообщение","form--col__full"]];
@@ -45,29 +48,55 @@ html
 				- var radioField = [["radio","new","one","form--col__three"],["radio","new","two","form--col__three"],["radio","new","three","form--col__three"]];
 				- var btnField = [["submit","btn btn-send","Отправить"]];
 
+				- var feedback = [["text","Фио","form--col__three require"],["phone","form--col__three require"],["email","Email","form--col__three"],["submit","btn btn-send","Отправить"]];
 
-			+form(standartField)
-			br
-			+form(personalDataField)
-			br
-			+form(fileField)
-			br
-			+form(selectField)
-			br
-			+form(checkboxField)
-			br
-			+form(radioField)
-			br
-			+form(btnField)
+
+
+			//- +form(standartField)
+			//- br
+			//- +form(personalDataField)
+			//- br
+			//- +form(fileField)
+			//- br
+			//- +form(selectField)
+			//- br
+			//- +form(checkboxField)
+			//- br
+			//- +form(radioField)
+			//- br
+			//- +form(btnField)
+			//- br
+			+form(feedback)
 			
 
+		section 
+			.main-full 
+				h2 Контакты
+			.contacts-info.main-grid
+				.contacts-line
+					h3 Aдрес
+					span 123298, г. москва, 3-я хорошевская улица дом 18, корпус 1, офис 311     
+				
+				.contacts-line
+					h3 Режим работы:
+					span
+						div вс-чт: 12:00 - 00:00
+						div пт-сб: 12:00 - 02:00
+				.contacts-line
+					h3 Телефоны:
+					span
+						div
+							a(href="#") 8 (495) 114-54-77
+						div
+							a(href="#") 8 (495) 114-54-77
+				.contacts-line
+					h3 Почта:
+					a(href="mailto:mail@mail.ru") mail@mail.ru
+			.main-full.contacts-map
+				include default/map.pug
 		// main page content end
 
-		// slider thumbnails start
 
-		include all-template/thumbnails-owl.pug
-		
-		// slider thumbnails end
 
 		// footer start 
 		.stub-footer

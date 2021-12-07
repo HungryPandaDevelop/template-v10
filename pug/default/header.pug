@@ -1,21 +1,21 @@
 header.header-black
 	.main-grid.headline.headline--black
 		.hamburger-container.vertical-align 
-			a(href="#").hamburger-btn.element-btn(data-showel="0")
+			a(href="#").hamburger-btn.element-btn(data-element="0")
 		.logo-container.vertical-align 
 			a.logo(href="#") 
 				img(src="../images/logo.svg", alt="")
 		.sigin-container.vertical-align 
 			.sigin-body
-				a(href="#") Войти
-				span /
-				a(href="#") Регистрация
-				//- a(href="#") 
-				//-   i.img-cover 
-				//-     img(src="../images/temp/1.jpg", alt="")
-				//- //-   em Медведев Евгений
+				//- a(href="#") Войти
 				//- span /
-				//- a(href="#") Выйти
+				//- a(href="#") Регистрация
+				a(href="#") 
+					i.img-cover 
+						img(src="../images/temp/1.jpg", alt="")
+					em Медведев Евгений
+					span /
+					a(href="#") Выйти
 
 		.city-container.vertical-align 
 			.city-body
@@ -23,16 +23,21 @@ header.header-black
 				a(href="#")  Москва
 		.controls-container.vertical-align
 			.controls-body
-				form.form(action="") 
-					input.search-field(type="text" placeholder="| Введите поисковой запрос ...")
-				.loop-btn
-				.basket-btn
+				form.form
+					input.search-field.input-decorate(type="text" placeholder="| Введите поисковой запрос ...")
+				a(href="#").loop-ico
+				a(href="#").basket-ico
+
 		hr
 	.main-grid.headerline
 		nav.nav
 			ul
-				each val in ["Товары","Услуги"]
+				each val in ["О нас","Каталог","Контакты","Услуги","Новости"]
 					li
 						a(href="#")
 							= val
-
+		.controls-container.vertical-align
+			.controls-body
+				a(href="#").btn.btn--green.element-btn(data-element="1") Заказать звонок
+				a(href="#").phone-ico
+				a(href="#").mail-ico

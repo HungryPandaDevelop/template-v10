@@ -24,19 +24,41 @@ h1
 .item-col-half
   grid-column: span 6
 
+.loop-ico
+  @include icoEl(30px, 30px, "../images/icons/loop-white.svg")
+
+.basket-ico
+  @include icoEl(30px, 30px, "../images/icons/basket-white.svg")
+
+.phone-ico
+  @include icoEl(30px, 30px, "../images/icons/phone-white.svg")
+
+.mail-ico
+  @include icoEl(30px, 30px, "../images/icons/mail-white.svg")
+
+.review-ico
+  @include icoEl(30px, 30px, "../images/icons/review-black.svg")
+
+.star-ico
+  @include icoEl(30px, 30px, "../images/icons/star-black.svg")
+
 .social
   display: inline-block
   vertical-align: middle
 
   a
     display: inline-block
-    margin: 0 0 0 15px
-
+    margin: 0 15px 0 0
+    padding: 8px
+    font-size: 0
+    border: 1px solid $blackColor
+    border-radius: 100%
     img
       object-fit: cover
-      width: 30px
-      height: 30px
-
+      width: 15px
+      height: 15px
+  .social-ico-white
+    border-color: white
 section
   padding: 120px 0 60px
 
@@ -44,7 +66,7 @@ section
     font-size: $largeSize
     margin: 0 0 60px
 
-.item-default
+.item--default
   text-decoration: none
   margin: 0 0 60px
   padding: 30px
@@ -57,11 +79,16 @@ section
     margin: 0 0 15px
     &:hover
       color: $greenColor
-  .item-default--img
+  .item__img
     margin: 0 0 15px
     img
       width: 100%
-  .item-default--date
+  .item__date
     margin: 0 0 15px
-  .item-defatit--description
+  .item__description
+    overflow: hidden
+    display: -webkit-box
+    -webkit-line-clamp: 2
+    -webkit-box-orient: vertical
+    line-clamp: 2
     margin: 0 0 15px

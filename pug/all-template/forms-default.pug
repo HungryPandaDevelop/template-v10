@@ -3,13 +3,13 @@ mixin form(allField)
   form.form.main-grid
     - for (var x = 0; x < allField.length; x++)
       if allField[x][0] =="text"
-        input(type="text" placeholder=allField[x][1] class=allField[x][2])
+        input(type="text" placeholder=allField[x][1] class='input-decorate '+allField[x][2])
       if allField[x][0] =="phone"
-        input.phone-mask(type="text" placeholder="+7 (___) ___ - __ - __" class=allField[x][1])
+        input.phone-mask(type="text" placeholder="+7 (___) ___ - __ - __" class='input-decorate '+allField[x][1])
       if allField[x][0] =="email"
-        input(type="email" placeholder=allField[x][1] class=allField[x][2])
+        input(type="email" placeholder=allField[x][1] class='input-decorate check-mail '+allField[x][2])
       if allField[x][0] =="textarea"
-        textarea(placeholder=allField[x][1] class=allField[x][2])
+        textarea(placeholder=allField[x][1] class='input-decorate '+allField[x][2])
       if allField[x][0] =="checkbox"
         .checkbox(class=allField[x][2])
           label= allField[x][1]

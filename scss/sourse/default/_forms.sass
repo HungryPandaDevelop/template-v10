@@ -1,18 +1,21 @@
-.form
+.input-decorate,
+.custom-select
+	padding: 5px
+	border: 0
+	border: 1px solid $blackColor
+	font: inherit
+	resize: none
+	width: 100%
+	background: none
+	margin: 0 0 15px
+	&:focus
+		outline: 0
+.file-decorate-error span,
+.input-error
+	border-color: $redColor
+.mail-error
+	border-color: $orangeColor
 
-	input:not(.btn),
-	textarea,
-	.custom-select
-		padding: 5px
-		border: 0
-		border: 1px solid $blackColor
-		font: inherit
-		resize: none
-		width: 100%
-		background: none
-		margin: 0 0 15px
-		&:focus
-			outline: 0
 .form--col__quadruple
 	grid-column: span 3
 .form--col__three
@@ -21,9 +24,6 @@
 	grid-column: span 6
 .form--col__full
 	grid-column: span 12
-.file-decorate-error span,
-.error-input
-	border-color: $redColor
 
 /*-file-upload-*/
 $heightContainerFile: 20px

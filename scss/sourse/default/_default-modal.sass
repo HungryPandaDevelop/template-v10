@@ -1,11 +1,10 @@
 
 .modal
   @include positionElement(100%, 100%, 0, 0, left, top, 3, fixed, flex)
-  background-color: #fff
-  transition: ease-out 0.25s
-  opacity: 0
-  visibility: hidden
 
+  a
+    &:hover
+      color: $blackColor
   .close-btn
     position: absolute
     right: 0
@@ -14,7 +13,9 @@
 
 .modal__container
   position: relative
+  background-color: $grayColorSecond
   max-width: 600px
+  width: 100%
   margin: auto
   padding: 30px
   border: 1px solid $blackColor
@@ -22,6 +23,11 @@
   h2, h3
     margin: 0 0 15px
 
-.modal--visible
-  opacity: 1
-  visibility: visible
+.element-show
+  transition: ease-out 0.25s
+  opacity: 0
+  visibility: hidden
+
+  &.show
+    opacity: 1
+    visibility: visible

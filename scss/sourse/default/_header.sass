@@ -25,11 +25,12 @@ header
 
 	nav
 		display: flex
-
+		grid-column: 2/span 5
 		ul
+			display: flex
 			width: 100%
 			margin: auto 0
-
+			justify-content: space-between
 		li
 			display: inline-block
 nav
@@ -83,23 +84,24 @@ nav
 		font-style: normal
 
 .city-container
-	grid-column: span 3
+	grid-column: span 2
 
 	em
 		margin-right: 10px
 		font-style: normal
 
 .controls-container
-	grid-column: span 3
-
+	grid-column: 10 /span 3
+	a
+		margin-left: 15px
 	.form
 		display: inline-block
-		width: calc(100% - 114px)
-		margin: 0
+		input
+			width: auto
+			margin: 0
 
 	.controls-body
 		width: 100%
-		max-width: 350px
 		margin: auto 0 auto auto
 		text-align: right
 
@@ -112,12 +114,3 @@ nav
 
 		&::placeholder
 			color: inherit
-
-.loop-btn
-	@include icoEl(20px, 20px, "../images/icons/loop-white.svg")
-
-.basket-btn
-	@include icoEl(25px, 20px, "../images/icons/basket-white.svg")
-
-.hamburger-btn
-	@include icoEl(20px, 21px, "../images/controls/hamburger-white.svg")
