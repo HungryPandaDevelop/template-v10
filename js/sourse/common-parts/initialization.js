@@ -1,6 +1,6 @@
-let owlPoster = $(".owl-poster");
+let owlMain = $(".owl-main");
 
-owlPoster.owlCarousel({
+owlMain.owlCarousel({
   items: 1,
   nav: true,
   dots: true

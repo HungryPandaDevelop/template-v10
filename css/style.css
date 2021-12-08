@@ -335,7 +335,7 @@ h1 {
   height: 15px;
 }
 .social .social-ico-white {
-  border-color: white;
+  border-color: #ffffff;
 }
 
 section {
@@ -348,7 +348,6 @@ section h2 {
 
 .item--default {
   text-decoration: none;
-  margin: 0 0 60px;
   padding: 30px;
   border: 1px solid;
 }
@@ -1076,7 +1075,6 @@ footer .create {
 .card-item--default {
   border: 1px solid #202020;
   padding: 15px 15px 30px;
-  margin: 0 0 30px;
 }
 .card-item--default h3 {
   font-size: 23px;
@@ -1166,10 +1164,13 @@ footer .create {
 /*-----map-----*/
 /*-----map-----*/
 /*-----main-page-start----*/
-/*-----home-start--*/
+/*-----main_home-start--*/
 .main_home {
   color: #ffffff;
   height: calc(100vh - 120px);
+}
+.main_home .owl-main {
+  height: 100%;
 }
 .main_home .img-cover {
   position: absolute;
@@ -1185,24 +1186,24 @@ footer .create {
   color: inherit;
 }
 
-/*-----home-end--*/
-/*-----contacts-start--*/
-.contacts-info {
+/*-----main_home-end--*/ 
+/*-----contacts_home-start--*/
+.contacts_home {
   margin-bottom: 30px;
 }
-.contacts-info .contacts-line {
+.contacts_home .contacts-line {
   -ms-grid-column-span: 3;
   grid-column: span 3;
 }
-.contacts-info .contacts-line h3 {
+.contacts_home .contacts-line h3 {
   margin: 0 0 5px;
 }
 
-.contacts-map {
+.map_home {
   height: 400px;
   position: relative;
 }
-.contacts-map #map {
+.map_home #map {
   width: 100%;
   position: absolute;
   height: 100%;
@@ -1210,5 +1211,5 @@ footer .create {
   top: 0;
 }
 
-/*-----contacts-end--*/
+/*-----contacts_home-end--*/
 /*-----home-end----*/
