@@ -2,6 +2,8 @@
 $gridCount: 12
 $indent: 30px
 $maxWidth: 1680px
+$gap: 15px
+$burgerDesctop: 1
 
 h1
   @include changeFontSize($mediaLargeSize)
@@ -9,7 +11,7 @@ h1
 .main-grid
   display: grid
   grid-template-columns: repeat($gridCount, 1fr)
-  grid-column-gap: 15px
+  grid-column-gap: $gap
   padding: 0 $indent
   max-width: $maxWidth
   margin: 0 auto
@@ -92,3 +94,30 @@ section
     -webkit-box-orient: vertical
     line-clamp: 2
     margin: 0 0 15px
+
+.breadcrumbs
+  border-bottom: 1px solid $grayColor
+  padding: 15px 0
+  a
+    text-decoration: none
+    color: $blackColor
+    &:hover
+      text-decoration: underline
+  span
+    margin: 0 5px
+
+.content--default
+  min-height: calc(100vh - 450px)
+  h1
+    padding: 30px 0
+
+@if $burgerDesctop == 1
+  .hamburger-container
+    display: none
+
+  @media screen and (max-width: 768px)
+    .hamburger-container
+      display: block
+  @media screen and (max-width: 414px)
+    .hamburger-container
+      display: block

@@ -379,6 +379,42 @@ section h2 {
   margin: 0 0 15px;
 }
 
+.breadcrumbs {
+  border-bottom: 1px solid #686868;
+  padding: 15px 0;
+}
+.breadcrumbs a {
+  text-decoration: none;
+  color: #202020;
+}
+.breadcrumbs a:hover {
+  text-decoration: underline;
+}
+.breadcrumbs span {
+  margin: 0 5px;
+}
+
+.content--default {
+  min-height: calc(100vh - 450px);
+}
+.content--default h1 {
+  padding: 30px 0;
+}
+
+.hamburger-container {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .hamburger-container {
+    display: block;
+  }
+}
+@media screen and (max-width: 414px) {
+  .hamburger-container {
+    display: block;
+  }
+}
 /*-----default-content-end----*/
 /*-----btns-start----*/
 input.btn,
@@ -391,8 +427,6 @@ input.btn,
   border-radius: 30px;
   cursor: pointer;
   text-align: center;
-  max-width: 190px;
-  width: 100%;
   background: none;
 }
 input.btn span,
@@ -546,6 +580,10 @@ input.btn span,
 .form--col__full {
   -ms-grid-column-span: 12;
   grid-column: span 12;
+}
+
+.form .btn {
+  margin: 0 0 15px;
 }
 
 /*-file-upload-*/
@@ -1211,5 +1249,10 @@ footer .create {
   top: 0;
 }
 
+.address-for-map {
+  display: none;
+}
+
 /*-----contacts_home-end--*/
 /*-----home-end----*/
+/*# sourceMappingURL=style.css.map */

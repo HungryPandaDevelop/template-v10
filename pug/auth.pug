@@ -16,16 +16,12 @@ html
 		include default/header.pug
 		
 		// header end
-		+roofContent("Детальная страница")
+		+roofContent("Регистрация")
 
-		// slider thumbnails start
-
-		//include all-template/thumbnails-owl.pug
-		
-		// slider thumbnails end
-		
+			+auth()
+	
 		// footer start 
 		.stub-footer
 		include default/footer.pug
 		
-		// footer end 
+		// footer end  
