@@ -2,17 +2,18 @@ input.btn,
 .btn
   text-decoration: none
   border: 1px solid
-  padding: 10px 30px
+  padding: 10px 30px 12px
   font: inherit
   display: inline-block
   border-radius: 30px
   cursor: pointer
   text-align: center
-
   background: none
+  background-color: $whiteColor
+  border-color: $whiteColor
 
-  span
-    margin-right: 8px
+  &:hover
+    text-decoration: none
 .btn--black
   background-color: $blackColor
   border-color: $blackColor
@@ -24,8 +25,10 @@ input.btn,
 
 .btn--green
   background-color: $greenColor
+  border-color: $greenColor
   &:hover
     background-color: $blackColor
+    border-color: $blackColor
 /*pagination page start*/
 
 .pagination
