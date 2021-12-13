@@ -1,2 +1,257 @@
-!function(){let t,e,i,n,a;function s(t,e,i){let n=$('<div class="file-input-container"><input class="input-file" type="file" data-flagM="'+e+'"></div>'),a=$('<div class="notice-file notice-big-file"><span>Файл слишком большой</span><i></i></div>'),s=$('<div class="file-decorate"><span>'+t+"</span><i></i></div>");if(i){let t=$('<div class="hint-input-file">'+i+"</div>");return n.append(t).append(s).append(a)}return n.append(s).append(a)}$(".owl-main").owlCarousel({items:1,nav:!0,dots:!0}),$(".img-cover").each((function(){let t=$(this).find("img").attr("src");$(this).css("background-image","url("+t+")")})),$(".input-file").each((function(){e=$(this).data("textchoise"),t=$(this).data("multy"),textHint=$(this).data("hint"),$(this).replaceWith(s(e,t,textHint))})),$("body").on("click",".file-decorate",(function(){console.log("cl"),$(this).parents(".file-input-container").find(".input-file").trigger("click")})),$("body").on("change",".input-file",(function(){n=$(this).val().replace(/C:\\fakepath\\/i,"");let a=$(this).parents(".file-input-container");n.length>0&&(i=this.files[0].size,i<5e5?(console.log(n,i),a.find("span").text(n),a.addClass("full"),t=$(this).data("flagm"),1==t&&$(this).parents(".file-input-container").after(s(e,"1"))):(console.log("to big"),$(this).parents(".file-input-container").find(".notice-big-file").addClass("notice-file--show"),setTimeout((function(){$(".notice-big-file").removeClass("notice-file--show")}),3e3)))})),$("body").on("click",".file-decorate i",(function(i){i.stopPropagation(),t=$(this).data("flagm");let n=$(this).parents(".file-input-container");1==t?n.remove():n.replaceWith(s(e,"0"))})),$(".style-select").each((function(){let t=$(this).find("option:selected").text(),e=$(this).data("text"),i=$(this).data("class");$(this).find("option").each((function(t){$(this).attr("data-index",t)})),e&&(t=e);let n=$(`<div class='custom-select ${i}'>\n        <span>${t}</span>\n        <ul class='ln'></ul>\n        <i></i>\n      </div>\n    `);$(this).before(n).hide(),$(this).find("option").each((function(t){var e=$(this).text();$(this).parent().prev().find("ul").append('<li data-index="'+t+'">'+e+"</li>")}))})),$(".custom-select").on("click",(function(t){t.preventDefault(),$(this).hasClass("active")?$(this).removeClass("active"):($(".custom-select").removeClass("active"),$(this).addClass("active"))})),$("body").on("click",(function(t){$(t.target).is(".custom-select, .custom-select > *")||$(".custom-select").removeClass("active")})),$(".custom-select").on("click","li",(function(){let t=$(this).data("index"),e=$(this).parents(".custom-select");a?($(this).after(a),a=$(this).remove()):a=$(this).remove(),e.next().find('option[data-index="'+t+'"]').prop("selected",!0),e.find("span").text($(this).text())})),$(".close-js").on("click",(function(){$(this).parents(".element-show").removeClass("show")})),$(".element-show").on("click",(function(t){$(t.target).is(".modal__container, .modal__container *")||$(this).removeClass("show")})),$(".element-btn").on("click",(function(t){t.preventDefault(),$(".element-show").removeClass("show");let e=$(this).attr("data-element");console.log("cl",e),$('[data-element="'+e+'"].element-show').addClass("show")})),ymaps.ready((function(){var t=[];$(".contacts-address-line").each((function(e){var i=$(this).data("coord-x"),n=$(this).data("coord-y"),a=[];a.push(i,n,e+1),t.push(a)}));var e=t,i=$("#map").data("marker");console.log(i);for(var n=new ymaps.Map("map",{center:[e[0][0],e[0][1]],zoom:9}),a=[],s=0;s<e.length;s++){var o=$("#address-"+s),l=o.find(".photo-address").attr("src"),c=o.find(".phone-feedback").html(),r=o.find(".address").html();BalloonContentLayout=ymaps.templateLayoutFactory.createClass('<div class="box-map"><img scr="'+l+'"><div class="box-map-content"><div>'+r+"</div><div>"+c+"</div></div></div>");var d=e[s][0],h=e[s][1];a[s]=new ymaps.Placemark([d,h],{id:s+1,hintContent:"Собственный значок метки с контентом",balloonContent:"А эта — новогодняя"},{balloonContentLayout:BalloonContentLayout,hideIconOnBalloonOpen:!1,iconLayout:"default#imageWithContent",iconImageHref:i,iconImageSize:[30,37],iconImageOffset:[-15,-37],iconContentOffset:[15,37]}),n.geoObjects.add(a[s]),n.setBounds(n.geoObjects.getBounds(),{checkZoomRange:!0}).then((function(){n.getZoom()>12&&n.setZoom(12)}))}}));var o,l=/^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i,c=!1;function r(t){o=t.val(),l.test(o)?(c=!0,t.removeClass("mail-error")):(c=!1,t.addClass("mail-error"))}$(".check-mail").on("keyup",(function(){r($(this)),0==o.length&&$(this).removeClass("mail-error")})),$(".btn-send").on("click",(function(t){c=!1,r($(this).parents(".form").find(".check-mail")),$(this).parents(".form").find(".require").each((function(){"checkbox"==$(this).attr("type")&&($(this).is(":checked")||($(this).parent().addClass("input-error"),c=!0)),$(this).is(".style-select")&&0==$(this).prev().attr("data-val")&&($(this).prev().addClass("input-error"),c=!0),"file"==$(this).attr("type")&&($(this).next().addClass("input-error"),c=!0),$(this).val()||(c=!0,$(this).addClass("input-error"))})),setTimeout((function(){$(".input-error").removeClass("input-error")}),3e3),1==c&&t.preventDefault()}))}();
+
+
+
+console.log($('.owl-main'));
+
+let owlMain = $('.owl-main');
+
+owlMain.owlCarousel({
+  items: 1,
+  nav: true,
+  dots: true
+});
+
+
+// img cover start
+$('.img-cover').each(function(){
+  let imgSrc = $(this).find('img').attr('src');
+  //console.log(imgSrc);
+  
+  $(this).css('background-image', 'url('+imgSrc+')');
+});
+// img cover file start
+ // style input file start
+
+let ObjfieldFile = $('.input-file');
+let flagFileMulti;
+let textChoise;
+let sizeFile;
+let nameFile;
+
+function createNewFileContainer(textChoiseParam, flagFileMultiParam, hintParam){
+		let fileContainer = $('<div class="file-input-container"><input class="input-file" type="file" data-flagM="'+flagFileMultiParam+'"></div>')
+		let noticeFile = $('<div class="notice-file notice-big-file"><span>Файл слишком большой</span><i></i></div>');
+		let docorateFile = $('<div class="file-decorate"><span>'+textChoiseParam+'</span><i></i></div>');
+		if(hintParam){
+				let hintFile = $('<div class="hint-input-file">'+hintParam+'</div>');
+				return fileContainer.append(hintFile).append(docorateFile).append(noticeFile);
+		}
+		else{
+				return fileContainer.append(docorateFile).append(noticeFile);
+		}
+}
+
+ObjfieldFile.each(function(){
+		let appendFlag = 0;
+		textChoise = $(this).data('textchoise');
+		flagFileMulti = $(this).data('multy');
+		textHint = $(this).data('hint');
+
+		$(this).replaceWith(createNewFileContainer(textChoise, flagFileMulti, textHint));
+
+});
+
+
+
+$('body').on('click', '.file-decorate', function () {
+		console.log('cl');
+		let container = $(this).parents('.file-input-container');
+		container.find('.input-file').trigger('click');
+});
+
+$('body').on('change', '.input-file', function () {
+		nameFile = $(this).val().replace(/C:\\fakepath\\/i, '');
+		let container = $(this).parents('.file-input-container');
+		
+		if(nameFile.length>0){
+				sizeFile = this.files[0].size;
+				if(sizeFile < 500000){
+						console.log(nameFile,sizeFile);
+						container.find('span').text(nameFile);
+						container.addClass('full');
+
+						flagFileMulti = $(this).data('flagm');
+
+						if (flagFileMulti == 1) {
+								$(this).parents('.file-input-container').after(createNewFileContainer(textChoise,"1"));
+						}
+				}
+				else{
+						console.log('to big');
+					$(this).parents('.file-input-container').find('.notice-big-file').addClass('notice-file--show');
+
+					setTimeout(function(){
+						$('.notice-big-file').removeClass('notice-file--show');
+					},3000);
+				}
+		}
+});
+
+$("body").on("click", ".file-decorate i", function (e) {
+		e.stopPropagation();
+		flagFileMulti = $(this).data('flagm');
+		let container = $(this).parents('.file-input-container');
+		if (flagFileMulti == 1) {
+				container.remove();
+		}
+		else{
+				container.replaceWith(createNewFileContainer(textChoise,"0"));
+		}
+});
+ // style input file end
+// custom-select
+
+$('.style-select').each(function () {
+  let firstElOption = $(this).find('option:selected').text();
+  let dataText = $(this).data('text');
+  let dataClass = $(this).data('class');
+  $(this).find('option').each(function(index){
+    $(this).attr('data-index',index);
+  });
+  if(dataText){
+      firstElOption = dataText;
+  }
+
+
+  let styleSelectBoxElement = 
+    $(`<div class='custom-select ${dataClass}'>
+        <span>${firstElOption}</span>
+        <ul class='ln'></ul>
+        <i></i>
+      </div>
+    `);
+
+  $(this).before(styleSelectBoxElement).hide();
+
+  $(this).find('option').each(function (index) {
+      var optionText = $(this).text();
+      $(this).parent().prev().find('ul').append('<li data-index="'+index+'">' + optionText + '</li>');
+  });
+});
+
+$(".custom-select").on('click', function (e) {
+  e.preventDefault();
+  if ($(this).hasClass('active')) {
+      $(this).removeClass('active');
+  } else {
+      $('.custom-select').removeClass('active');
+      $(this).addClass('active');
+  }
+});
+
+$('body').on('click', function (evt) {
+  if (!$(evt.target).is('.custom-select, .custom-select > *')) {
+      $('.custom-select').removeClass('active');
+  }
+});
+
+let tempSelectVal;
+$('.custom-select').on('click', 'li', function () {
+  let liIndex = $(this).data('index');
+  let parentsEl = $(this).parents('.custom-select');
+
+  if(!tempSelectVal){   
+    tempSelectVal = $(this).remove();
+  }else{
+    $(this).after(tempSelectVal);
+    tempSelectVal = $(this).remove();
+  }
+  
+  parentsEl.next().find('option[data-index="'+liIndex+'"]').prop('selected', true);
+
+  parentsEl.find('span').text($(this).text());
+});
+// custom-select
+
+$('.close-js').on('click', function () {
+    $(this).parents('.element-show').removeClass('show');
+});
+$('.element-show').on('click',function(e){
+    
+    if (!$(e.target).is('.modal__container, .modal__container *')) {
+        $(this).removeClass('show');
+    }
+});
+
+$('.element-btn').on('click', function (e) {
+    e.preventDefault();
+    
+    $('.element-show').removeClass('show');
+    let activeIndex = $(this).attr('data-element');
+    console.log('cl',activeIndex);
+    $('[data-element="' + activeIndex + '"].element-show').addClass('show');
+});
+		// check email
+		var r = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
+		var mailInput;
+		var mailFlag = 1;
+		var isEmpty = false;
+		function checkMail(elThis) {
+				mailInput = elThis.val();
+
+				if (!r.test(mailInput)) {
+						isEmpty = false;
+						elThis.addClass("mail-error");
+
+				} else {
+						isEmpty = true;
+						elThis.removeClass("mail-error")
+				}
+		}
+
+		$(".check-mail").on("keyup", function () {
+				checkMail($(this));
+
+				if (mailInput.length == 0) {
+						$(this).removeClass("mail-error")
+				}
+		});
+		// check email
+
+		// check require
+
+		$(".btn-send").on("click", function (e) {
+		
+				isEmpty = false;
+
+				checkMail($(this).parents(".form").find(".check-mail"));
+
+				$(this).parents(".form").find(".require").each(function () {
+
+						if ($(this).attr("type") == "checkbox") {
+								if (!$(this).is(":checked")) {
+										$(this).parent().addClass("input-error");
+										isEmpty = true;
+								}
+						}
+						if ($(this).is(".style-select")) {
+
+								if ($(this).prev().attr("data-val") == 0) {
+
+										$(this).prev().addClass("input-error");
+										isEmpty = true;
+								}
+						}
+
+						if ($(this).attr("type") == "file") {
+								$(this).next().addClass("input-error");
+								isEmpty = true;
+						}
+
+						if (!$(this).val()) {
+								isEmpty = true;
+								$(this).addClass("input-error");
+						}
+				});
+
+				setTimeout(function () {
+						$(".input-error").removeClass("input-error");
+				}, 3000);
+
+				if (isEmpty == true) {
+						e.preventDefault();
+				};
+		});
+
+		// check require
 //# sourceMappingURL=common-dist.js.map

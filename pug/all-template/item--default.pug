@@ -1,11 +1,12 @@
 mixin itemDefault(itemName, col, name, img, data, text, btnClass, btnText)
-  .item--default(class="item-col-"+col class=itemName+"-item")
-    h3
-      a(href="#")= name
-    .item__img(href="#")
+  -var masColName = ['','item-col-full','item-col-half','item-col-third','item-col-quarter']
+  .item--default(class=masColName[col] class=itemName+"-item")
+    .item__img.img-cover(href="#")
       img(src= img, alt="")
     if data
       .item__date= data 
+    h3
+      a(href="#")= name
     if text
       .item__description= text
     if btnClass

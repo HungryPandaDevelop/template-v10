@@ -1,4 +1,6 @@
-let owlMain = $(".owl-main");
+console.log($('.owl-main'));
+
+let owlMain = $('.owl-main');
 
 owlMain.owlCarousel({
   items: 1,
