@@ -342,6 +342,30 @@ h1 {
   border-color: #ffffff;
 }
 
+.social {
+  display: inline-block;
+  vertical-align: middle;
+}
+.social .addtoany_list a {
+  display: inline-block;
+  margin: 0 15px 0 0;
+  padding: 8px;
+  border: 1px solid #202020;
+  border-radius: 100%;
+}
+.social .addtoany_list a:hover {
+  border: 1px solid #76c100;
+}
+.social .addtoany_list a img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 20px;
+  height: 20px;
+}
+.social .addtoany_list .social-ico-white {
+  border-color: #ffffff;
+}
+
 section {
   padding: 120px 0 60px;
 }
@@ -1503,7 +1527,7 @@ footer .create {
 }
 
 .owl-detail-main {
-  height: 300px;
+  height: 450px;
 }
 .owl-detail-main .img-cover {
   position: absolute;
