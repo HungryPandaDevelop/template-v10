@@ -2,11 +2,8 @@
 $('.close-js').on('click', function () {
     $(this).parents('.element-show').removeClass('show');
 });
-$('.element-show').on('click',function(e){
-    
-    if (!$(e.target).is('.modal__container, .modal__container *')) {
-        $(this).removeClass('show');
-    }
+$('.modal-bg').on('click',function(e){
+    $(this).parents('.element-show').removeClass('show');
 });
 
 $('.element-btn').on('click', function (e) {

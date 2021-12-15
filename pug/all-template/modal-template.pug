@@ -1,6 +1,7 @@
-mixin modal-template(num, topicModal, textModal, visibility)
+mixin modal-template(num, topicModal, textModal, visibility, addClass)
   if(visibility)
-    .modal.element-show.show(data-element=num)
+    .modal.element-show.show(data-element= num  class= addClass)
+      .modal-bg
       .modal__container 
         .close-btn.close-js
         .main-full
@@ -12,7 +13,8 @@ mixin modal-template(num, topicModal, textModal, visibility)
         if block
           block
   else
-    .modal.element-show(data-element=num)
+    .modal.element-show(data-element=num class=addClass)
+      .modal-bg
       .modal__container 
         .close-btn.close-js
         .main-full

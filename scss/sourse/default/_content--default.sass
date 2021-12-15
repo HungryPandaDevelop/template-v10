@@ -7,7 +7,8 @@ $burgerDesctop: 1
 
 h1
   @include changeFontSize($mediaLargeSize)
-
+h2
+  @include changeFontSize($mediaMediumSize)
 .main-grid
   display: grid
   grid-template-columns: repeat($gridCount, 1fr)
@@ -15,6 +16,12 @@ h1
   padding: 0 $indent
   max-width: $maxWidth
   margin: 0 auto
+.form-grid
+  display: grid
+  grid-template-columns: repeat($gridCount, 1fr)
+  grid-column-gap: $gap
+.catalog-grid
+  grid-gap: $gap
 .main-full
   padding: 0 $indent
   max-width: $maxWidth
@@ -28,28 +35,6 @@ h1
   grid-column: span 6
 .item-col-full
   grid-column: span 12
-.logout-ico
-  @include icoEl(30px, 30px, "../images/icons/logout-white.svg")
-.login-ico
-  @include icoEl(30px, 30px, "../images/icons/login-white.svg")
-
-.loop-ico
-  @include icoEl(30px, 30px, "../images/icons/loop-white.svg")
-
-.basket-ico
-  @include icoEl(30px, 30px, "../images/icons/basket-white.svg")
-
-.phone-ico
-  @include icoEl(30px, 30px, "../images/icons/phone-white.svg")
-
-.mail-ico
-  @include icoEl(30px, 30px, "../images/icons/mail-white.svg")
-
-.review-ico
-  @include icoEl(30px, 30px, "../images/icons/review-black.svg")
-
-.star-ico
-  @include icoEl(30px, 30px, "../images/icons/star-black.svg")
 
 .social
   display: inline-block
@@ -95,8 +80,12 @@ section
     padding-bottom: 60%
     height: auto
 
+    transition: ease-out 0.5s
     img
       @include positionElement(100%,100%,0,0)
+
+    &:hover
+      transform: scale(1.05)
   .item__date
     margin: 0 0 15px
   .item__description
@@ -133,3 +122,7 @@ section
   @media screen and (max-width: 414px)
     .hamburger-container
       display: block
+
+/*detail start*/
+
+/*detail end*/

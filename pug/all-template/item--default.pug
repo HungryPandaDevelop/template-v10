@@ -1,7 +1,7 @@
 mixin itemDefault(itemName, col, name, img, data, text, btnClass, btnText)
   -var masColName = ['','item-col-full','item-col-half','item-col-third','item-col-quarter']
   .item--default(class=masColName[col] class=itemName+"-item")
-    .item__img.img-cover(href="#")
+    a.item__img.img-cover(href="#")
       img(src= img, alt="")
     if data
       .item__date= data 
