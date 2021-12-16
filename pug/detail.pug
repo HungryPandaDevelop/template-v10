@@ -4,16 +4,21 @@ html
 	include default/head.pug 
 	// head end
 	body
-		// modal-menu start 1
-		include modal/menu__modal.pug
-		// modal-menu end 2
+		// popup-menu start
+		include popup/menu.pug 
+		// popup-menu end
+ 
+		// popup-form start
+		include popup/backcall.pug
+		// popup-form end
 
-		// modal-form start
-		include modal/backcall__modal.pug
-		// modal-form end
+		// popup-search start
+		include popup/search.pug
+		// popup-search end
 
 		// header start
 		include default/header.pug
+		// header end
 		
 		// header end
 		+roofContent("Детальная страница")

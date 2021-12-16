@@ -1,8 +1,6 @@
 
 
 
-console.log($('.owl-main'));
-
 let owlMain = $('.owl-main');
 
 owlMain.owlCarousel({
@@ -186,77 +184,100 @@ $('.element-btn').on('click', function (e) {
     console.log('cl',activeIndex);
     $('[data-element="' + activeIndex + '"].element-show').addClass('show');
 });
-		// check email
-		var r = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
-		var mailInput;
-		var mailFlag = 1;
-		var isEmpty = false;
-		function checkMail(elThis) {
-				mailInput = elThis.val();
+console.log('test');
+ 
+ymaps.ready(function () {
+    var massCoord = [];
+    $(".contacts-address-line").each(function (index) {
+        var oneCoordX = $(this).data("coord-x");
+        var oneCoordY = $(this).data("coord-y");
+        var oneCord = [];
+        oneCord.push(oneCoordX, oneCoordY, (index + 1))
+        massCoord.push(oneCord);
+    });
 
-				if (!r.test(mailInput)) {
-						isEmpty = false;
-						elThis.addClass("mail-error");
+    var masMark = massCoord;
+    // console.log("masMark", masMark);
+    var mapMarker = $('#map').data('marker');
+    console.log(mapMarker);
+    
+    var myMap = new ymaps.Map('map', {
+        center: [masMark[0][0], masMark[0][1]],
+        zoom: 9
+    });
 
-				} else {
-						isEmpty = true;
-						elThis.removeClass("mail-error")
-				}
-		}
 
-		$(".check-mail").on("keyup", function () {
-				checkMail($(this));
+    var myPlacemarkWithContent = [];
+    for (var i = 0; i < masMark.length; i++) {
+        var addressEl = $("#address-" + i);
+        var addressImg = addressEl.find(".photo-address").attr("src");
+        var addressPhone = addressEl.find(".phone-feedback").html();
+        var addressText = addressEl.find(".address").html();
 
-				if (mailInput.length == 0) {
-						$(this).removeClass("mail-error")
-				}
-		});
-		// check email
 
-		// check require
 
-		$(".btn-send").on("click", function (e) {
-		
-				isEmpty = false;
 
-				checkMail($(this).parents(".form").find(".check-mail"));
+        BalloonContentLayout = ymaps.templateLayoutFactory.createClass(
+            '<div class="box-map">' +
+            '<img scr="' + addressImg + '">' +
+            '<div class="box-map-content"><div>' + addressText + '</div>' +
+            '<div>' + addressPhone + '</div>' +
+            '</div></div>');
 
-				$(this).parents(".form").find(".require").each(function () {
+        var x = masMark[i][0];
+        var y = masMark[i][1];
 
-						if ($(this).attr("type") == "checkbox") {
-								if (!$(this).is(":checked")) {
-										$(this).parent().addClass("input-error");
-										isEmpty = true;
-								}
-						}
-						if ($(this).is(".style-select")) {
+        // console.log("for", x, y);
 
-								if ($(this).prev().attr("data-val") == 0) {
+        myPlacemarkWithContent[i] = new ymaps.Placemark([x, y], {
+            id: i + 1,
+            hintContent: 'Собственный значок метки с контентом',
+            balloonContent: 'А эта — новогодняя'
+        }, {
+            balloonContentLayout: BalloonContentLayout,
+            // Опции.
+            // Необходимо указать данный тип макета.
+            hideIconOnBalloonOpen: false,
+            iconLayout: 'default#imageWithContent',
+            // Своё изображение иконки метки.
+            iconImageHref: mapMarker,
+            // Размеры метки.
+            iconImageSize: [30, 37],
+            // Смещение левого верхнего угла иконки относительно
+            // её "ножки" (точки привязки).
+            iconImageOffset: [-15, -37],
+            // Смещение слоя с содержимым относительно слоя с картинкой.
+            iconContentOffset: [15, 37] //,
+            // Макет содержимого.
+            //iconContentLayout: MyIconContentLayout
+        });
+        myMap.geoObjects
+            .add(myPlacemarkWithContent[i]);
 
-										$(this).prev().addClass("input-error");
-										isEmpty = true;
-								}
-						}
+        myMap.setBounds(myMap.geoObjects.getBounds(), {
+            checkZoomRange: true
+        }).then(function () {
+            if (myMap.getZoom() > 12) myMap.setZoom(12);
+        });
 
-						if ($(this).attr("type") == "file") {
-								$(this).next().addClass("input-error");
-								isEmpty = true;
-						}
+        //});
 
-						if (!$(this).val()) {
-								isEmpty = true;
-								$(this).addClass("input-error");
-						}
-				});
+    }
 
-				setTimeout(function () {
-						$(".input-error").removeClass("input-error");
-				}, 3000);
+    // $(".contacts-address .link").on("click", function (e) {
+    //     e.preventDefault();
+    //     var itemIndex = $(this).parents(".contacts-address-line").data("index");
+    //     $("html,body").animate({
+    //         scrollTop: $('.map').offset().top
+    //     }, 1000);
 
-				if (isEmpty == true) {
-						e.preventDefault();
-				};
-		});
+    //     console.log("forCenter", [masMark[itemIndex][0], masMark[itemIndex][1]]);
 
-		// check require
+
+    //     myMap.setCenter([masMark[itemIndex][0], masMark[itemIndex][1]]);
+
+    //     myPlacemarkWithContent[itemIndex].balloon.open();
+    // });
+
+});
 //# sourceMappingURL=common-dist.js.map

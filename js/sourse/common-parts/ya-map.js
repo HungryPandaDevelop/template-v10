@@ -1,3 +1,5 @@
+console.log('test');
+ 
 ymaps.ready(function () {
     var massCoord = [];
     $(".contacts-address-line").each(function (index) {

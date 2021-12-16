@@ -1,5 +1,3 @@
-console.log($('.owl-main'));
-
 let owlMain = $('.owl-main');
 
 owlMain.owlCarousel({
