@@ -1,7 +1,14 @@
 .reviews-list,
 .reviews-form
   grid-column: span 6
-
+.reviews-list
+  .navigation
+    display: flex
+    justify-content: space-between
+    a
+      text-decoration: none
+      &:hover
+        color: $greenColor
 .reviews-item
   border: 1px solid $blackColor
   padding: 15px
@@ -19,7 +26,7 @@
   height: 30px
   line-height: 28px
   text-align: center
-  margin-right: 60px
+  margin-left: 60px
 .reviews-name
   font-size: $mediumSize
   font-family: "bold"
@@ -40,7 +47,7 @@
   display: inline-block
   vertical-align: top
 
-.reviews-starts
+.reviews-stars
   margin: 0 0 15px
   i
     cursor: pointer
@@ -52,3 +59,12 @@
     vertical-align: middle
   h3
     margin-right: 15px
+
+.reviews-container.selected
+  i
+    &.active,
+    &:not(.active)
+      background-image: url('../images/icons/star-green.svg')
+
+    &.active~i
+      background-image: url('../images/icons/star-gray.svg')

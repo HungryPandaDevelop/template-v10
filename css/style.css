@@ -907,6 +907,16 @@ a.pagination-next:hover {
 }
 
 /*.wpcf7-form*/
+/*wp comments*/
+.logged-in-as a {
+  margin-right: 15px;
+}
+
+.com_block_star {
+  display: none;
+}
+
+/*wp comments*/
 /*-----forms-end----*/
  * /*-----header-start----*/
 .stub {
@@ -1688,6 +1698,21 @@ footer .create {
   grid-column: span 6;
 }
 
+.reviews-list .navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.reviews-list .navigation a {
+  text-decoration: none;
+}
+.reviews-list .navigation a:hover {
+  color: #76c100;
+}
+
 .reviews-item {
   border: 1px solid #202020;
   padding: 15px;
@@ -1712,7 +1737,7 @@ footer .create {
   height: 30px;
   line-height: 28px;
   text-align: center;
-  margin-right: 60px;
+  margin-left: 60px;
 }
 
 .reviews-name {
@@ -1739,22 +1764,29 @@ footer .create {
   vertical-align: top;
 }
 
-.reviews-starts {
+.reviews-stars {
   margin: 0 0 15px;
 }
-.reviews-starts i {
+.reviews-stars i {
   cursor: pointer;
 }
-.reviews-starts i:hover {
+.reviews-stars i:hover {
   background-image: url("../images/icons/star-green.svg");
 }
-.reviews-starts h3,
-.reviews-starts .reviews-container {
+.reviews-stars h3,
+.reviews-stars .reviews-container {
   display: inline-block;
   vertical-align: middle;
 }
-.reviews-starts h3 {
+.reviews-stars h3 {
   margin-right: 15px;
+}
+
+.reviews-container.selected i.active, .reviews-container.selected i:not(.active) {
+  background-image: url("../images/icons/star-green.svg");
+}
+.reviews-container.selected i.active ~ i {
+  background-image: url("../images/icons/star-gray.svg");
 }
 
 /*-----content-detail-end----*/
