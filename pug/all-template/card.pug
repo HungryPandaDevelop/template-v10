@@ -1,5 +1,5 @@
 mixin cardItemDefault(col, name, img, price, priceSecond, text, btnClass, btnText)
-	.card(class="item-col-"+col)
+	.card(class="col-"+(12/col))
 		.card__img(href="#")
 			img(src= img, alt="")
 		h3

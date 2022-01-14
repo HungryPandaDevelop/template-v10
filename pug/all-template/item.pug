@@ -1,6 +1,5 @@
 mixin itemDefault(itemName, col, name, img, data, text, btnClass, btnText)
-  -var masColName = ['','item-col-full','item-col-half','item-col-third','item-col-quarter']
-  .item(class=masColName[col] class=itemName+"-item")
+  .item(class="col-"+(12/col) class=itemName+"-item")
     a.item__img.img-cover(href="#")
       img(src= img, alt="")
     if data
