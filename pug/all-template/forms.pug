@@ -1,6 +1,6 @@
 
-mixin form(allField)
-  form.form.main-full
+mixin form(allField) 
+  form.form.main-grid
     - for (var x = 0; x < allField.length; x++)
       if allField[x][0] =="text"
         input(type="text" placeholder=allField[x][1] class='input-decorate '+allField[x][2])

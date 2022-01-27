@@ -649,6 +649,9 @@ a.pagination-next:hover {
 .form .btn {
   margin: 15px 0;
 }
+.form.main-grid {
+  padding: 0;
+}
 
 .form-btn-container {
   position: relative;
