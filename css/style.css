@@ -157,6 +157,12 @@ strong {
     font-size: 21px;
   }
 }
+.all-btns {
+  padding: 30px;
+  background-color: #eee;
+  min-height: 100vh;
+}
+
 /*-----base-end----*/
 /*-----content-start----*/
 .main-grid {
@@ -361,7 +367,7 @@ a.pagination-next:hover {
 }
 
 /*pagination page end*/
-.close-btn {
+.close-btn--black {
   display: inline-block;
   vertical-align: middle;
   width: 30px;
@@ -373,7 +379,19 @@ a.pagination-next:hover {
   cursor: pointer;
 }
 
-.hamburger-btn {
+.close-btn--white {
+  display: inline-block;
+  vertical-align: middle;
+  width: 30px;
+  height: 30px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("../images/controls/close-white.svg");
+  cursor: pointer;
+}
+
+.hamburger-btn--white {
   display: inline-block;
   vertical-align: middle;
   width: 30px;
@@ -382,6 +400,17 @@ a.pagination-next:hover {
   background-repeat: no-repeat;
   background-size: contain;
   background-image: url("../images/controls/hamburger-white.svg");
+}
+
+.hamburger-btn--black {
+  display: inline-block;
+  vertical-align: middle;
+  width: 30px;
+  height: 30px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("../images/controls/hamburger-black.svg");
 }
 
 .back-link {
